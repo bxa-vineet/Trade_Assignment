@@ -11,6 +11,6 @@ public class TradeProcessor implements Runnable {
     @Override
     public void run() {
         portfolio.processTrade(trade);
-        // persistTrade(trade);   // DB call (optional here)
+      
     }
 }
