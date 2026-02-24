@@ -10,7 +10,8 @@ public class TradingEngine {
 
         TradeLoader.load("trades.csv")
                 .forEach(trade -> pool.submit(new TradeProcessor(trade, portfolio)));
-
+        
+        pool.shutdown();
         pool.awaitTermination(1, TimeUnit.MINUTES);
 
         ReportService.generate(portfolio);
